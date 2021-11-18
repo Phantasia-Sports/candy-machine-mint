@@ -3,13 +3,22 @@ import styled from "styled-components";
 import Countdown from "react-countdown";
 import { Button, CircularProgress, Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-
 import * as anchor from "@project-serum/anchor";
 
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
+import { Grid } from "@material-ui/core";
+import phantasia_logo from "./assets/phantasia.svg";
+import solana_circle from "./assets/solana-circle.svg";
+
+import Controls from "./Components/Controls";
+import Gallery from "./Components/Gallery";
+import HelpModal from "./Components/HelpModal";
+import Timer from "./Components/Timer";
+import Title from "./Components/Title";
+import WhyMintModal from "./Components/WhyMintModal";
 
 import {
   CandyMachine,
@@ -18,14 +27,26 @@ import {
   mintOneToken,
   shortenAddress,
 } from "./candy-machine";
+import Wallet from "./Components/Wallet";
 
 const ConnectButton = styled(WalletDialogButton)``;
 
 const CounterText = styled.span``; // add your styles here
 
-const MintContainer = styled.div``; // add your styles here
-
-const MintButton = styled(Button)``; // add your styles here
+const MintButton = styled(Button)`
+font-size: 1.6vw;
+font-weight: 700;
+background-color: #9662ff;
+border-radius: 8px;
+box-shadow:  rgba(192, 161, 255, 0.2) 0px 20px 25px -5px,
+    rgba(192, 161, 255, 0.08) 0px 10px 10px -5px;
+    width: 100%;
+    color: white;
+    font-family: Poppins;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+}`; // add your styles here
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -41,6 +62,8 @@ const Home = (props: HomeProps) => {
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
+  const [howToOpen, setHowToOpen] = useState(false);
+  const [whyMintOpen, setWhyMintOpen] = useState(false);
 
   const [itemsAvailable, setItemsAvailable] = useState(0);
   const [itemsRedeemed, setItemsRedeemed] = useState(0);
@@ -165,49 +188,158 @@ const Home = (props: HomeProps) => {
     props.connection,
   ]);
 
+  console.log(wallet);
+
   return (
-    <main>
-      {wallet && (
-        <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
-      )}
+    <div className="">
+      {/* <HomePageComponent/> */}
+      <div className="container-view relative blob-bg">
+        <HelpModal open={howToOpen} onClose={() => setHowToOpen(false)} />
+        <WhyMintModal
+          open={whyMintOpen}
+          onClose={() => setWhyMintOpen(false)}
+        />
 
-      {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
-
-      {wallet && <p>Total Available: {itemsAvailable}</p>}
-
-      {wallet && <p>Redeemed: {itemsRedeemed}</p>}
-
-      {wallet && <p>Remaining: {itemsRemaining}</p>}
-
-      <MintContainer>
-        {!wallet ? (
-          <ConnectButton>Connect Wallet</ConnectButton>
-        ) : (
-          <MintButton
-            disabled={isSoldOut || isMinting || !isActive}
-            onClick={onMint}
-            variant="contained"
+        <div className="bg-blurred-overlay"></div>
+        <div className="stripe-svg stripe-pattern-container"></div>
+        <Grid container className="h-full w-full">
+          <Grid
+            item
+            xs={6}
+            className="test-border min-h-full"
+            style={{ paddingRight: "7%", paddingLeft: "7%" }}
           >
-            {isSoldOut ? (
-              "SOLD OUT"
-            ) : isActive ? (
-              isMinting ? (
-                <CircularProgress />
-              ) : (
-                "MINT"
-              )
-            ) : (
-              <Countdown
-                date={startDate}
-                onMount={({ completed }) => completed && setIsActive(true)}
-                onComplete={() => setIsActive(true)}
-                renderer={renderCounter}
+            <div className="h-full w-full relative flex-col">
+              <Controls
+                setHowToOpen={setHowToOpen}
+                setWhyMintOpen={setWhyMintOpen}
               />
-            )}
-          </MintButton>
-        )}
-      </MintContainer>
+              {/* <Timer /> */}
+              <Title />
 
+              <div className="flex-grow"></div>
+              <div style={{ marginBottom: "7vh" }}>{!wallet && <Wallet />}</div>
+              {wallet && (
+                <div style={{ marginBottom: "7vh" }}>
+                  <div className="flex-col mb-md">
+                    {wallet && (
+                      <span
+                        className="white weight-500"
+                        style={{ fontSize: "1.2vw" }}
+                      >
+                        Connected to wallet{" "}
+                        {shortenAddress(wallet.publicKey.toBase58() || "")}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex-row align-center mb-lg">
+                    <img src={solana_circle} className="h-2 w-2" alt="sol" />
+                    <span
+                      className="white weight-400 px-md"
+                      style={{ fontSize: "1.1vw" }}
+                    >
+                      Balance: {(balance || 0).toLocaleString()} SOL
+                    </span>
+                  </div>
+                  <MintButton
+                    disabled={isSoldOut || isMinting || !isActive}
+                    onClick={onMint}
+                    variant="contained"
+                  >
+                    {isSoldOut ? (
+                      "SOLD OUT"
+                    ) : isActive ? (
+                      isMinting ? (
+                        <CircularProgress />
+                      ) : (
+                        "MINT"
+                      )
+                    ) : (
+                      <Countdown
+                        date={startDate}
+                        onMount={({ completed }) =>
+                          completed && setIsActive(true)
+                        }
+                        onComplete={() => setIsActive(true)}
+                        renderer={renderCounter}
+                      />
+                    )}
+                  </MintButton>
+                  <br/>
+                  <div className="flex-row w-full">
+                    <div
+                      className="w-33 flex flex-center gray"
+                      style={{ fontSize: "1.0vw" }}
+                    >
+                      Collection Total
+                    </div>
+                    <div
+                      className="w-33 flex flex-center gray"
+                      style={{ fontSize: "1.0vw" }}
+                    >
+                      Phanatics Redeemed
+                    </div>
+                    <div
+                      className="w-33 flex flex-center gray"
+                      style={{ fontSize: "1.0vw" }}
+                    >
+                      Phanatics Remaining
+                    </div>
+                  </div>
+                  <div className="flex-row w-full mb-lg">
+                    <div
+                      className="w-33 flex flex-center white weight-600"
+                      style={{ fontSize: "2vw" }}
+                    >
+                      {itemsAvailable}
+                    </div>
+                    <div
+                      className="w-33 flex flex-center white weight-600"
+                      style={{ fontSize: "2vw" }}
+                    >
+                      {itemsRedeemed}
+                    </div>
+                    <div
+                      className="w-33 flex flex-center white weight-600"
+                      style={{ fontSize: "2vw" }}
+                    >
+                      {itemsRemaining}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </Grid>
+
+          <Grid item xs={6} className="test-border">
+            <Gallery />
+          </Grid>
+          {/* *********************** END NFT CARD SECTION */}
+        </Grid>
+
+        <div className="social-links flex-row space-between-lg flex align-center">
+          <span className="link white font-md weight-400 cursor-pointer">
+            <a
+              href="https://t.co/Vskz9PkBBC?amp=1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Discord
+            </a>
+          </span>
+          <span className="link white font-md weight-400 cursor-pointer">
+            <a
+              href="https://twitter.com/PhantasiaSports"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Twitter
+            </a>
+          </span>
+          <img className="w-1" src={phantasia_logo} alt="logo"></img>
+        </div>
+      </div>
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
@@ -220,7 +352,7 @@ const Home = (props: HomeProps) => {
           {alertState.message}
         </Alert>
       </Snackbar>
-    </main>
+    </div>
   );
 };
 
