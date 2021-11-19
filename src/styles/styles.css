@@ -6,6 +6,10 @@
   background-position: center;
 }
 
+body {
+  background-color: var(--neutral-900);
+}
+
 .bg-blurred-overlay {
   position: absolute;
   height: 100%;

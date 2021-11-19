@@ -5,7 +5,6 @@ export default function Gallery() {
   const setRandomValues = () => {
     const random = Math.floor(Math.random() * (15 - 1 + 1) + 1);
     setRand1(random);
-    console.log(random);
   };
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -190,9 +190,9 @@ const Home = (props: HomeProps) => {
 
 
   return (
-    <div className="">
+    <div className="container-view" style={{backgroundColor: "#000"}}>
       {/* <HomePageComponent/> */}
-      <div className="container-view relative blob-bg">
+      <div className="relative blob-bg scroll-y max-h-full h-full">
         <HelpModal open={howToOpen} onClose={() => setHowToOpen(false)} />
         <WhyMintModal
           open={whyMintOpen}
@@ -201,14 +201,14 @@ const Home = (props: HomeProps) => {
 
         <div className="bg-blurred-overlay"></div>
         <div className="stripe-svg stripe-pattern-container"></div>
-        <Grid container className="h-full w-full">
+        <Grid container className=" w-full h-full">
           <Grid
             item
             xs={6}
-            className="test-border min-h-full"
+            className="test-border min-h-full h-full"
             style={{ paddingRight: "7%", paddingLeft: "7%" }}
           >
-            <div className="h-full w-full relative flex-col">
+            <div className="min-h-full w-full relative flex-col">
               <Controls
                 setHowToOpen={setHowToOpen}
                 setWhyMintOpen={setWhyMintOpen}

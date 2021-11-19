@@ -5,7 +5,7 @@
 body {
   min-height: 100vh !important;
   font-family: "Poppins", sans-serif;
-  background-color: var(--neutral-900);
+  background-color: #000;
 }
 *::-webkit-scrollbar {
   display: none !important;
