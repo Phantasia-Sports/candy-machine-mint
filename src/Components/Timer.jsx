@@ -58,7 +58,6 @@ export function Timer() {
       );
     }
   });
-  console.log(timeLeft)
 
   return (
     

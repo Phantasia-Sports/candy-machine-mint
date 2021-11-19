@@ -61,7 +61,7 @@ h2 {
   position: absolute;
   right: 54%;
   bottom: 52%;
-  width: 200px;
+  width: 15vw;
   background-color: rgba(19, 20, 22, 0.9);
   backdrop-filter: blur(10px);
   padding: 12px;
@@ -73,15 +73,15 @@ h2 {
 }
 
 .nft-card-1 > .nft-card-img {
-  height: 200px;
-  width: 200px;
+  height: 15vw;
+  width: 15vw;
 }
 
 .nft-card-2 {
   position: absolute;
   left: 52%;
   top: 25%;
-  width: 175px;
+  width: 12.5vw;
   background-color: rgba(19, 20, 22, 0.9);
   backdrop-filter: blur(10px);
   padding: 12px;
@@ -93,15 +93,15 @@ h2 {
 }
 
 .nft-card-2 > .nft-card-img {
-  height: 175px;
-  width: 175px;
+  height: 12.5vw;
+  width: 12.5vw;
 }
 
 .nft-card-3 {
   position: absolute;
   right: 50%;
   top: 53%;
-  width: 150px;
+  width: 10vw;
   background-color: rgba(19, 20, 22, 0.9);
   backdrop-filter: blur(10px);
   padding: 12px;
@@ -113,8 +113,8 @@ h2 {
 }
 
 .nft-card-3 > .nft-card-img {
-  height: 150px;
-  width: 150px;
+  height: 10vw;
+  width: 10vw;
 }
 
 .bg-p1 {

@@ -188,7 +188,6 @@ const Home = (props: HomeProps) => {
     props.connection,
   ]);
 
-  console.log(wallet);
 
   return (
     <div className="">
@@ -267,6 +266,7 @@ const Home = (props: HomeProps) => {
                     )}
                   </MintButton>
                   <br/>
+                  
                   <div className="flex-row w-full">
                     <div
                       className="w-33 flex flex-center gray"
@@ -307,6 +307,8 @@ const Home = (props: HomeProps) => {
                       {itemsRemaining}
                     </div>
                   </div>
+                  <span className="danger font-sm">Note: </span> <span className="white font-sm">Minting will incur a 0.01 SOL rent fee</span>
+
                 </div>
               )}
             </div>
