@@ -55,7 +55,7 @@ export default function HelpModal({ open, onClose }) {
               Minting is easy - simply connect a Solana wallet with at least
               0.25 SOL, click the mint button on the main screen and you'll
               receive a Phanatic in your wallet in exchange for 0.25 SOL (~
-              $50). If all Pahantics are sold out, SOL will not be taken from
+              $50). If all Phanatics are sold out, SOL will not be taken from
               your wallet.
             </span>
           </div>
