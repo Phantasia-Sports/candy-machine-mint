@@ -274,18 +274,21 @@ const Home = (props: HomeProps) => {
                     >
                       Collection Total
                     </div>
-                    <div
-                      className="w-33 flex flex-center gray"
-                      style={{ fontSize: "1.0vw" }}
-                    >
-                      Phanatics Redeemed
-                    </div>
-                    <div
-                      className="w-33 flex flex-center gray"
-                      style={{ fontSize: "1.0vw" }}
-                    >
-                      Phanatics Remaining
-                    </div>
+                    {isActive &&
+                    <>
+                      <div
+                        className="w-33 flex flex-center gray"
+                        style={{ fontSize: "1.0vw" }}
+                      >
+                        Phanatics Redeemed
+                      </div>
+                      <div
+                        className="w-33 flex flex-center gray"
+                        style={{ fontSize: "1.0vw" }}
+                      >
+                        Phanatics Remaining
+                      </div>
+                    </>}
                   </div>
                   <div className="flex-row w-full mb-lg">
                     <div
