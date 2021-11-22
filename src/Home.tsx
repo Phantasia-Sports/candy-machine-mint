@@ -266,7 +266,7 @@ const Home = (props: HomeProps) => {
                     )}
                   </MintButton>
                   <br/>
-                  
+
                   <div className="flex-row w-full">
                     <div
                       className="w-33 flex flex-center gray"
@@ -274,18 +274,21 @@ const Home = (props: HomeProps) => {
                     >
                       Collection Total
                     </div>
-                    <div
-                      className="w-33 flex flex-center gray"
-                      style={{ fontSize: "1.0vw" }}
-                    >
-                      Phanbots Redeemed
-                    </div>
-                    <div
-                      className="w-33 flex flex-center gray"
-                      style={{ fontSize: "1.0vw" }}
-                    >
-                      Phanbots Remaining
-                    </div>
+                    {isActive &&
+                    <>
+                      <div
+                        className="w-33 flex flex-center gray"
+                        style={{ fontSize: "1.0vw" }}
+                      >
+                        Phanbots Redeemed
+                      </div>
+                      <div
+                        className="w-33 flex flex-center gray"
+                        style={{ fontSize: "1.0vw" }}
+                      >
+                        Phanbots Remaining
+                      </div>
+                    </>}
                   </div>
                   <div className="flex-row w-full mb-lg">
                     <div
@@ -294,18 +297,21 @@ const Home = (props: HomeProps) => {
                     >
                       {itemsAvailable}
                     </div>
-                    <div
-                      className="w-33 flex flex-center white weight-600"
-                      style={{ fontSize: "2vw" }}
-                    >
-                      {itemsRedeemed}
-                    </div>
-                    <div
-                      className="w-33 flex flex-center white weight-600"
-                      style={{ fontSize: "2vw" }}
-                    >
-                      {itemsRemaining}
-                    </div>
+                    {isActive &&
+                    <>
+                      <div
+                        className="w-33 flex flex-center white weight-600"
+                        style={{ fontSize: "2vw" }}
+                      >
+                        {itemsRedeemed}
+                      </div>
+                      <div
+                        className="w-33 flex flex-center white weight-600"
+                        style={{ fontSize: "2vw" }}
+                      >
+                        {itemsRemaining}
+                      </div>
+                    </>}
                   </div>
                   <span className="danger font-sm">Note: </span> <span className="white font-sm">Minting will incur a 0.01 SOL rent fee</span>
 
