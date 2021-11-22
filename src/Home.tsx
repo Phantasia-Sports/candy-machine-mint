@@ -278,13 +278,13 @@ const Home = (props: HomeProps) => {
                       className="w-33 flex flex-center gray"
                       style={{ fontSize: "1.0vw" }}
                     >
-                      Phanatics Redeemed
+                      Phanbots Redeemed
                     </div>
                     <div
                       className="w-33 flex flex-center gray"
                       style={{ fontSize: "1.0vw" }}
                     >
-                      Phanatics Remaining
+                      Phanbots Remaining
                     </div>
                   </div>
                   <div className="flex-row w-full mb-lg">

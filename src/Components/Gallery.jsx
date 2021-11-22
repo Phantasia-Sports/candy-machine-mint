@@ -27,7 +27,7 @@ export default function Gallery() {
           }`}
         ></div>
         <div className="rarity-label">
-          <span className="white font-md weight-500">Phanatic #{rand1 - 3 < 1 ? rand1 + 3 : rand1 - 3}</span>
+          <span className="white font-md weight-500">Phanbot #{rand1 - 3 < 1 ? rand1 + 3 : rand1 - 3}</span>
         </div>
       </div>
       <div className={`nft-card-2 animation-from-right`}>
@@ -38,7 +38,7 @@ export default function Gallery() {
           }`}
         ></div>
         <div className="rarity-label">
-          <span className="white font-md weight-500">Phanatic #{rand1 - 5 < 1 ? rand1 + 5 : rand1 - 5}</span>
+          <span className="white font-md weight-500">Phanbot #{rand1 - 5 < 1 ? rand1 + 5 : rand1 - 5}</span>
         </div>
       </div>
       <div className="nft-card-3 animation-from-bottom">
@@ -47,7 +47,7 @@ export default function Gallery() {
           className={`animation-fade nft-card-img mb-md bg-p${rand1}`}
         ></div>
         <div className="rarity-label">
-          <span className="font-md weight-500">Phanatic #{rand1}</span>
+          <span className="font-md weight-500">Phanbot #{rand1}</span>
         </div>
       </div>
     </div>

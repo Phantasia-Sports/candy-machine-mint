@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal } from "@material-ui/core";
-import phanatics from "../assets/phanatics.png";
+import Phanbots from "../assets/Phanbots.png";
 
 export default function WhyMintModal({ open, onClose }) {
   return (
@@ -20,8 +20,8 @@ export default function WhyMintModal({ open, onClose }) {
           <div className="w-full overflow-hide flex flex-center" style={{height: "20rem"}}>
             <img
               className="w-full cover "
-              alt="phanatics"
-              src={phanatics}
+              alt="Phanbots"
+              src={Phanbots}
               style={{height: "20rem"}}
             ></img>
           </div>
@@ -34,11 +34,11 @@ export default function WhyMintModal({ open, onClose }) {
             }}
           >
             <h2 className="m-0 mb-md dark" style={{fontSize: "1.5vw"}}>
-              Why Mint a Phanatic?
+              Why Mint a Phanbot?
             </h2>
             <span className=" weight-400 mb-lg" style={{fontSize: "1.1vw", color: "#00d9a2" }}>
               {" "}
-              Mint a Phanatic via Candy Machine for 0.25 SOL
+              Mint a Phanbot via Candy Machine for 0.25 SOL
             </span>
 
             {/* <span
@@ -46,12 +46,12 @@ export default function WhyMintModal({ open, onClose }) {
               style={{ fontSize: "1.1vw",lineHeight: "1.5rem" }}
             >
               We're finally here - Phantasia is dropping its first NFT
-              collection - Season 1: the Phanatics - on November 23rd 2021 via
-              Candy Machine Mint. A Phanatic will cost only 0.25 SOL, allowing
+              collection - Season 1: the Phanbots - on November 23rd 2021 via
+              Candy Machine Mint. A Phanbot will cost only 0.25 SOL, allowing
               easy accessiblility for the whole community. Minting through candy
               machine is easy! Simply follow the url the team will provide on
               twitter and discord the morning of the 23rd, and click the mint
-              button to own a badass Phanatic NFT!
+              button to own a badass Phanbot NFT!
             </span> */}
             <h4 className="dark"> Why Mint?</h4>
             <span
@@ -59,7 +59,7 @@ export default function WhyMintModal({ open, onClose }) {
               style={{ fontSize: "1.1vw",lineHeight: "1.5rem" }}
             >
               There are two important reasons why you should be excited to mint
-              a Phanatic.
+              a Phanbot.
             </span>
             <span
               className="dark  weight-300 mb-md"
@@ -98,7 +98,7 @@ export default function WhyMintModal({ open, onClose }) {
               style={{fontSize: "1.1vw", lineHeight: "1.5rem" }}
             >
               Want to improve your skill and show off to other fantasy players?
-              Mint a Phanatic and unlock the following:
+              Mint a Phanbot and unlock the following:
             </span>
             <div className="flex-row space-between-md align-center mb-md">
               <i className="bx bxs-circle success"></i>
@@ -122,7 +122,7 @@ export default function WhyMintModal({ open, onClose }) {
               <i className="bx bxs-circle success"></i>
               <span className="dark  weight-300">
                 Ability to customize your in-game profile with Phantasia NFTs to
-                flex your Phanatic
+                flex your Phanbot
               </span>
             </div>
 
@@ -130,7 +130,7 @@ export default function WhyMintModal({ open, onClose }) {
               className="dark  weight-300 mb-lg"
               style={{ fontSize: "1.1vw",lineHeight: "1.5rem" }}
             >
-              As an added bonus, by minting a Phanatic you will also
+              As an added bonus, by minting a Phanbot you will also
               automatically be whitelisted for future Phantasia NFT drops.
             </span>
 

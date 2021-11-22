@@ -25,7 +25,7 @@ export default function HelpModal({ open, onClose }) {
               style={{ color: "#00d9a2", fontSize: "1.2vw" }}
             >
               Welcome to the very first Phantasia NFT Drop - Season 1: The
-              Phanatics.
+              Phanbots.
             </span>
             <span
               className="font-md dark weight-300 mb-lg"
@@ -40,22 +40,22 @@ export default function HelpModal({ open, onClose }) {
               className="font-md dark weight-300 mb-lg"
               style={{ lineHeight: "1.5rem", fontSize: "1.2vw" }}
             >
-              Although a Phanatic NFT is <b>NOT</b> required to play, it does
+              Although a Phanbot NFT is <b>NOT</b> required to play, it does
               unlock some helpful, exclusive features that could bring your
               fantasy sports skill to the next level. In addition, Phantasia
-              only allows personal profile customization if you own a Phanatic
+              only allows personal profile customization if you own a Phanbot
               or other Phantasia vanity NFTs. If you want to stand out on
               leaderboards with your badass profile, make sure you mint a
-              Phanatic - <b>they're only .25 SOL!</b>
+              Phanbot - <b>they're only .25 SOL!</b>
             </span>
             <span
               className="font-md dark weight-300"
               style={{ lineHeight: "1.5rem", fontSize: "1.2vw" }}
             >
-              Minting is easy - simply connect a Solana wallet with at least
-              0.25 SOL, click the mint button on the main screen and you'll
-              receive a Phanatic in your wallet in exchange for 0.25 SOL (~
-              $50). If all Phanatics are sold out, SOL will not be taken from
+              Minting is easy - simply connect a Solana wallet with a little more than
+              0.25 SOL (0.01 SOL fee for minting), click the mint button on the main screen and you'll
+              receive a Phanbot in your wallet in exchange for 0.25 SOL (~
+              $50). If all Phanbots are sold out, SOL will not be taken from
               your wallet.
             </span>
           </div>
